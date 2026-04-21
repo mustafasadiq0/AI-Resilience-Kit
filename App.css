@@ -1,0 +1,281 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #F5F5F5;
+  --foreground: #424242;
+  --card: #FFFFFF;
+  --card-foreground: #424242;
+  --popover: #FFFFFF;
+  --popover-foreground: #424242;
+  --primary: #2E86AB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4CAF50;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F5F5;
+  --muted-foreground: #9E9E9E;
+  --accent: #81C784;
+  --accent-foreground: #FFFFFF;
+  --destructive: #F44336;
+  --border: #E0E0E0;
+  --input: #FFFFFF;
+  --ring: #2E86AB;
+  --chart-1: #2E86AB;
+  --chart-2: #4CAF50;
+  --chart-3: #81C784;
+  --chart-4: #FF9800;
+  --chart-5: #A23B72;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #424242;
+  --sidebar-primary: #2E86AB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #424242;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #2E86AB;
+}
+
+.dark {
+  --background: #1B5E7F;
+  --foreground: #FFFFFF;
+  --card: #2E86AB;
+  --card-foreground: #FFFFFF;
+  --popover: #2E86AB;
+  --popover-foreground: #FFFFFF;
+  --primary: #81C784;
+  --primary-foreground: #1B5E7F;
+  --secondary: #4CAF50;
+  --secondary-foreground: #FFFFFF;
+  --muted: #2E7D32;
+  --muted-foreground: #A23B72;
+  --accent: #4CAF50;
+  --accent-foreground: #FFFFFF;
+  --destructive: #F44336;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #81C784;
+  --chart-1: #81C784;
+  --chart-2: #4CAF50;
+  --chart-3: #2E86AB;
+  --chart-4: #FF9800;
+  --chart-5: #A23B72;
+  --sidebar: #2E86AB;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #81C784;
+  --sidebar-primary-foreground: #1B5E7F;
+  --sidebar-accent: #2E7D32;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #81C784;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #2E86AB 0%, #4CAF50 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #2E86AB 0%, #4CAF50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .neural-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(46, 134, 171, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(129, 199, 132, 0.1) 0%, transparent 50%);
+  }
+}
+
+
+/* Markdown styles for prose */
+.prose h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+.prose h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.prose h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+}
+
+.prose ul {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  color: var(--muted-foreground);
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.prose strong {
+  font-weight: bold;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--muted-foreground);
+}
+
+.prose code {
+  background-color: var(--accent);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+  font-family: monospace;
+  color: var(--accent-foreground);
+}
+
+.prose pre {
+  background-color: var(--accent);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  color: var(--accent-foreground);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.prose th {
+  background-color: var(--muted);
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Dark mode adjustments */
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3 {
+  color: var(--foreground-dark);
+}
+
+.dark .prose p,
+.dark .prose li,
+.dark .prose blockquote {
+  color: var(--muted-foreground-dark);
+}
+
+.dark .prose a {
+  color: var(--primary-dark);
+}
+
+.dark .prose code,
+.dark .prose pre {
+  background-color: var(--accent-dark);
+  color: var(--accent-foreground-dark);
+}
+
+.dark .prose th {
+  background-color: var(--muted-dark);
+  color: var(--foreground-dark);
+}
+
+
